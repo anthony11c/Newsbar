@@ -1,4 +1,3 @@
-const { ClassGetter } = require('@angular/compiler/src/output/output_ast');
 const express = require('express');
 const app = express();
 
@@ -6,7 +5,7 @@ const app = express();
 // app.use(bodyParser.json());
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/vijestidb', {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 
 //import model of data
@@ -42,30 +41,17 @@ app.get('/politika', (req,res) => {
 //get all users
 app.get('/users', function (req, res) {
 
-    let users = User.find({}, function(err, users){
-
-        if(err){
-            console.log("Greska prilikom dohvata usera iz baze!")
-            console.log(err);
-        }
-
-        else {
-            console.log("Pronadeno je nesto!");
-            //res.json({username: 'finaboi'});
-            //res.json(users);
-        }
+    User.find().then( result => {
+        console.log(result); 
+        res.send(result); 
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
+      });
     });
 });
-
-
-
-
-
-
-
-
-
-
 
 //Exportanje api funkcija 
 module.exports = app;

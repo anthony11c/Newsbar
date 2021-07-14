@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
-const { ObjectUnsubscribedError } = require('rxjs');
 mongoose.set('debug', true);
 
-let userSchema = mongoose.Schema({
-    _id: Number,
+const userSchema = mongoose.Schema({
+    _id: String,
     username:  String,
     password: String,
     role: String,
     name: String
-});
+}, { collection: 'users' });
 
-let User = module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
