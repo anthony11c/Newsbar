@@ -2,21 +2,15 @@ const express = require('express');
 const cors = require("cors");
 const app = express();
 
-var corsOptions = {
+const corsOptions = {
     origin: "http://localhost:4200"
 }
 
 app.use(cors(corsOptions));
-
 // parse requests of content-type - application/json
 app.use(express.json());
-
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
-
-//const User = require('./models/User');
-
-
 
 const db = require('./models');
 db.mongoose.connect(db.url, {
@@ -48,6 +42,7 @@ app.get('/politika', (req,res) => {
 });
 
 require('../backend/routes/user.routes')(app);
+require('../backend/routes/vijest.routes')(app);
 
 // Server setup
 app.listen(8080, () => {

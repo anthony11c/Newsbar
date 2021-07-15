@@ -8,5 +8,6 @@ const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.users = require('./user')(mongoose);
+db.vijesti = require('./vijest')(mongoose);
 
 module.exports = db;
