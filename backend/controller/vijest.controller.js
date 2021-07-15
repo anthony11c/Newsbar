@@ -10,8 +10,8 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create a Tutorial
-  const user = new User({
+  // Create a Vijest
+  const vijest = new Vijest({
     _id: req.body._id,
     kategorija: req.body.kategorija,
     naslov: req.body.naslov,
@@ -20,21 +20,21 @@ exports.create = (req, res) => {
     tekst_full: req.body.tekst_full
   });
 
-  // Save Tutorial in the database
-  Vijest
-    .save(Vijest)
+  // Save Vijest in the database
+  vijest
+    .save(vijest)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the User."
+          err.message || "Some error occurred while creating the Vijest."
       });
     });
 };
 
-// Retrieve all Users from the database.
+// Retrieve all Vijest from the database.
 exports.findAll = (req, res) => {
     Vijest.find().then( result => {
         console.log(result); 
@@ -43,34 +43,72 @@ exports.findAll = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving users."
+          err.message || "Some error occurred while retrieving Vijesti."
       });
     });
 };
 
-// Find a single User with an id
+// Find a single Vijest with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
     Vijest.findById(id)
       .then(data => {
         if (!data)
-          res.status(404).send({ message: "Not found User with id " + id });
+          res.status(404).send({ message: "Not found Vijest with id " + id });
         else res.send(data);
       })
       .catch(err => {
         res
           .status(500)
-          .send({ message: "Error retrieving  User with id=" + id });
+          .send({ message: "Error retrieving  Vijest with id=" + id });
       });
 };
 
-// Update a User by the id in the request
+// Update a Vijest by the id in the request
 exports.update = (req, res) => {
-  
+    if (!req.body) {
+        return res.status(400).send({
+          message: "Data to update can not be empty!"
+        });
+      }
+    
+      const id = req.params.id;
+    
+      Vijest.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+        .then(data => {
+          if (!data) {
+            res.status(404).send({
+              message: `Cannot update Vijest with id=${id}. Maybe Vijest was not found!`
+            });
+          } else res.send({ message: "Vijest was updated successfully." });
+        })
+        .catch(err => {
+          res.status(500).send({
+            message: "Error updating Vijest with id=" + id
+          });
+        });
 };
 
-// Delete a User with the specified id in the request
+// Delete a Vijest with the specified id in the request
 exports.delete = (req, res) => {
-  
+    const id = req.params.id;
+
+    Vijest.findByIdAndRemove(id)
+      .then(data => {
+        if (!data) {
+          res.status(404).send({
+            message: `Cannot delete Vijest with id=${id}. Maybe Vijest was not found!`
+          });
+        } else {
+          res.send({
+            message: "Vijest was deleted successfully!"
+          });
+        }
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: "Could not delete Vijest with id=" + id
+        });
+      });
 };

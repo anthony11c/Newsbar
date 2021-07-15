@@ -19,7 +19,7 @@ exports.create = (req, res) => {
     name: req.body.name
   });
 
-  // Save Tutorial in the database
+  // Save User in the database
   user
     .save(user)
     .then(data => {

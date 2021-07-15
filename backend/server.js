@@ -43,6 +43,8 @@ app.get('/politika', (req,res) => {
 
 require('../backend/routes/user.routes')(app);
 require('../backend/routes/vijest.routes')(app);
+require('../backend/routes/kategorija.routes')(app);
+require('../backend/routes/role.routes')(app);
 
 // Server setup
 app.listen(8080, () => {
