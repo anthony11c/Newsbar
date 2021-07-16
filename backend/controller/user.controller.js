@@ -10,7 +10,7 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create a Tutorial
+  // Create a User
   const user = new User({
     _id: req.body._id,
     username: req.body.username,
