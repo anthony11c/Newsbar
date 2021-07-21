@@ -15,7 +15,7 @@ exports.create = (req, res) => {
     _id: req.body._id,
     username: req.body.username,
     password: req.body.password,
-    role: req.body.role,
+    role: req.body.roles,
     name: req.body.name
   });
 
@@ -72,4 +72,16 @@ exports.update = (req, res) => {
 // Delete a User with the specified id in the request
 exports.delete = (req, res) => {
   
+};
+
+exports.allAccess = (req, res) => {
+  res.status(200).send("Public Content.");
+};
+
+exports.userBoard = (req, res) => {
+  res.status(200).send("Normal user Content.");
+};
+
+exports.adminBoard = (req, res) => {
+  res.status(200).send("Admin Content.");
 };
