@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 mongoose.set('debug', true);
 
 const userSchema = mongoose.Schema({
-    _id: Number,
     username:  String,
     password: String,
     roles: [
@@ -14,4 +13,4 @@ const userSchema = mongoose.Schema({
     name: String
 }, { collection: 'users' });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);

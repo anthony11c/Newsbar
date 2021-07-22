@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require('./models');
-const Role = db.role;
+const Role = require('./models/role');
 
 db.mongoose.connect(db.url, {
     useNewUrlParser: true,

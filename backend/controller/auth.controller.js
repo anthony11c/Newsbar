@@ -1,7 +1,7 @@
 const config = require("../config/auth.config");
 const db = require("../models");
-const User = db.user;
-const Role = db.role;
+const User = require('../models/user');
+const Role = require('../models/role');
 
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
@@ -14,6 +14,7 @@ exports.signup = (req, res) => {
 
   user.save((err, user) => {
     if (err) {
+      console.log("Greska je tu!");
       res.status(500).send({ message: err });
       return;
     }
@@ -25,6 +26,7 @@ exports.signup = (req, res) => {
         },
         (err, roles) => {
           if (err) {
+            console.log("Greska je tu!");
             res.status(500).send({ message: err });
             return;
           }
