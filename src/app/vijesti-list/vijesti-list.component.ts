@@ -13,6 +13,7 @@ export class VijestiListComponent implements OnInit {
   currentVijest: Vijest = {};
   currentIndex = -1;
   title = '';
+  vijestId = '611f9de24d79651150d5de65';
 
   constructor(private vijestService: VijestService) { }
 
@@ -41,9 +42,10 @@ export class VijestiListComponent implements OnInit {
   setActiveVijest(vijest: Vijest, index: number): void {
     this.currentVijest = vijest;
     this.currentIndex = index;
-    console.log("Označena vijest:")
+    console.log("Označena vijest:");
     console.log(this.currentVijest);
-    console.log("Index:" + index)
+    console.log("Index:" + index);
+    console.log("id vijesti iz baze:" + this.currentVijest._id);
   }
 
   removeAllVijesti(): void {

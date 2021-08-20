@@ -1,5 +1,5 @@
 export class Vijest {
-    id?: any;
+    _id?: any;
     kategorija?: string;
     naslov?: string;
     tekst_kratki?: string;

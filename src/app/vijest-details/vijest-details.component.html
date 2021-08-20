@@ -1,5 +1,5 @@
 <div>
-    <div *ngIf="currentVijest.id" class="edit-form">
+    <div *ngIf="currentVijest._id" class="edit-form">
       <h4>Vijest</h4>
       <form>
         <div class="form-group">
@@ -58,8 +58,8 @@
       <p>{{ message }}</p>
     </div>
   
-    <div *ngIf="!currentVijest.id">
+    <div *ngIf="!currentVijest._id">
       <br />
-      <p>Cannot access this Tutorial...</p>
+      <p>Cannot access this vijest...</p>
     </div>
   </div>

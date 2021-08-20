@@ -36,7 +36,7 @@
       </button>
     </div>
     <div class="col-md-6">
-      <div *ngIf="!currentVijest.id">
+      <div *ngIf="currentVijest._id">
         <h4><b>Odabrana vijest</b></h4>
         <div>
           <label><strong>Naslov:</strong></label> {{ currentVijest.naslov }}
@@ -51,7 +51,7 @@
         </div>
     -->
   
-        <a class="badge badge-warning" routerLink="/vijesti/{{ currentVijest.id }}">
+        <a class="badge badge-warning" routerLink="/vijesti/{{ currentVijest._id }}">
           Edit
         </a>
       </div>

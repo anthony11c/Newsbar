@@ -42,7 +42,7 @@ export class VijestDetailsComponent implements OnInit {
   updateVijest(): void {
     this.message = '';
 
-    this.vijestService.update(this.currentVijest.id, this.currentVijest)
+    this.vijestService.update(this.currentVijest._id, this.currentVijest)
       .subscribe(
         response => {
           console.log(response);
@@ -54,7 +54,7 @@ export class VijestDetailsComponent implements OnInit {
   }
 
   deleteVijest(): void {
-    this.vijestService.delete(this.currentVijest.id)
+    this.vijestService.delete(this.currentVijest._id)
       .subscribe(
         response => {
           console.log(response);
