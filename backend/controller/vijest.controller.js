@@ -5,15 +5,14 @@ const Vijest = require("../models/vijest");
 exports.create = (req, res) => {
 
   // Validate request
-  if (!req.body.kategorija) {
+  /* if (!req.body.kategorija) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
-  }
+  } */
 
   // Create a Vijest
   const vijest = new Vijest({
-    _id: req.body._id,
-    kategorija: req.body.kategorija,
+    kategorija: 1,
     naslov: req.body.naslov,
     user: req.body.user,
     tekst_kratki: req.body.tekst_kratki,
@@ -111,4 +110,20 @@ exports.delete = (req, res) => {
           message: "Could not delete Vijest with id=" + id
         });
       });
+};
+
+// Delete all Vijesti from the database.
+exports.deleteAll = (req, res) => {
+  Vijest.deleteMany({})
+    .then(data => {
+      res.send({
+        message: `${data.deletedCount} Vijesti were deleted successfully!`
+      });
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while removing all vijesti."
+      });
+    });
 };

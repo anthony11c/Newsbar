@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 mongoose.set('debug', true);
 
 const vijestSchema = mongoose.Schema({
-    _id: Number,
     kategorija:  String,
     naslov: String,
     datum: String,
@@ -10,5 +9,11 @@ const vijestSchema = mongoose.Schema({
     tekst_kratki: String,
     tekst_full: String
 }, { collection: 'vijest' });
+
+/* vijestSchema.method("toJSON", function() {
+    const { __v, _id, ...object } = this.toObject();
+    object.id = _id;
+    return object;
+  }); */
 
 module.exports = mongoose.model('Vijest', vijestSchema);

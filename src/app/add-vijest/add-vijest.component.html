@@ -1,0 +1,35 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="title">Naslov</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required
+            [(ngModel)]="vijest.naslov"
+            name="title"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="description">Opis</label>
+          <input
+            class="form-control"
+            id="description"
+            required
+            [(ngModel)]="vijest.tekst_kratki"
+            name="description"
+          />
+        </div>
+  
+        <button (click)="saveVijest()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Tutorial was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newVijest()">Add</button>
+      </div>
+    </div>
+  </div>

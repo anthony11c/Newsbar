@@ -13,6 +13,9 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders} from '../_helpers/auth.interceptor';
+import { AddVijestComponent } from './add-vijest/add-vijest.component';
+import { VijestDetailsComponent } from './vijest-details/vijest-details.component';
+import { VijestiListComponent } from './vijesti-list/vijesti-list.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import { authInterceptorProviders} from '../_helpers/auth.interceptor';
     BoardAdminComponent,
     BoardUserComponent,
     LoginComponent,
+    AddVijestComponent,
+    VijestDetailsComponent,
+    VijestiListComponent,
   ],
   imports: [
     HttpClientModule,

@@ -1,0 +1,64 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by title"
+          [(ngModel)]="title"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchTitle()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3><b>Lista svih vijesti</b></h3>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let vijest of vijesti; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveVijest(vijest, i)"
+        >
+          {{ vijest.naslov }}
+        </li>
+      </ul>
+  
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllVijesti()">
+        Remove All
+      </button>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="!currentVijest.id">
+        <h4><b>Odabrana vijest</b></h4>
+        <div>
+          <label><strong>Naslov:</strong></label> {{ currentVijest.naslov }}
+        </div>
+        <div>
+          <label><strong>Opis:</strong></label>
+          {{ currentVijest.tekst_kratki }}
+        </div>
+        <!--<div>
+          <label><strong>Status:</strong></label>
+          {{ currentVijest.published ? "Published" : "Pending" }}
+        </div>
+    -->
+  
+        <a class="badge badge-warning" routerLink="/vijesti/{{ currentVijest.id }}">
+          Edit
+        </a>
+      </div>
+  
+      <div *ngIf="!currentVijest">
+        <br />
+        <p>Odaberi vijest...</p>
+      </div>
+    </div>
+  </div>
