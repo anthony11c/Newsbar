@@ -1,0 +1,60 @@
+#prijava-link{
+    color: #0d6efd;
+}
+
+.card-img-top-news{
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-img-top{
+    opacity: 1;
+    transition: .8s ease;
+}
+
+.card-img-top:hover{
+    opacity: 0.8;
+}
+
+.top-news-img-container{
+    height: 300px;
+}
+
+.card-img-weather{
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-img-weather-container{
+    height: 440px;
+    border: 5px solid #0d6efd;
+}
+
+.news-text-only{
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.news-text-only:hover{
+    color: red;
+}
+
+.news-text-only-container{
+    height: 420px;
+}
+
+.card{
+    cursor: pointer;
+}
+
+.card-title{
+    color: red;
+}
+
+h1{
+    margin:0;
+    background-color: red;
+    padding: 15px;
+    color: white;
+    padding-left: 35px;
+}
