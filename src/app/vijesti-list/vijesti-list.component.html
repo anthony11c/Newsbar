@@ -31,8 +31,8 @@
         </li>
       </ul>
   
-      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllVijesti()">
-        Remove All
+      <button class="btn btn-sm btn-danger mt-2" (click)="removeAllVijesti()">
+        Obriši sve vijesti
       </button>
     </div>
     <div class="col-md-6">
@@ -51,7 +51,7 @@
         </div>
     -->
   
-        <a class="badge badge-warning" routerLink="/vijesti/{{ currentVijest._id }}">
+        <a class="btn btn-sm btn-warning" routerLink="/vijesti/{{ currentVijest._id }}">
           Edit
         </a>
       </div>

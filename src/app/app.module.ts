@@ -16,6 +16,7 @@ import { authInterceptorProviders} from '../_helpers/auth.interceptor';
 import { AddVijestComponent } from './add-vijest/add-vijest.component';
 import { VijestDetailsComponent } from './vijest-details/vijest-details.component';
 import { VijestiListComponent } from './vijesti-list/vijesti-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { VijestiListComponent } from './vijesti-list/vijesti-list.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
