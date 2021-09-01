@@ -5,4 +5,5 @@ export class Vijest {
     tekst_kratki?: string;
     tekst_full?: string;
     datum?: string;
+    slika?: string;
 }

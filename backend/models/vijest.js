@@ -2,12 +2,13 @@ const mongoose = require('mongoose');
 mongoose.set('debug', true);
 
 const vijestSchema = mongoose.Schema({
-    kategorija:  String,
+    kategorija: String,
     naslov: String,
     datum: String,
     user: Number,
     tekst_kratki: String,
-    tekst_full: String
+    tekst_full: String,
+    slika: String
 }, { collection: 'vijest' });
 
 /* vijestSchema.method("toJSON", function() {

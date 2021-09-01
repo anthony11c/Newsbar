@@ -13,9 +13,15 @@ export class VijestDetailsComponent implements OnInit {
 
   currentVijest: Vijest = {
     naslov: '',
+    kategorija: '',
     tekst_kratki: '',
+    tekst_full: '',
+    slika: ''
   };
   message = '';
+  selectedKategorija = '';
+
+  kategorije = [ 'Sport', 'Znanost', 'Politika'];
 
   constructor(
     private vijestService: VijestService,
@@ -32,6 +38,9 @@ export class VijestDetailsComponent implements OnInit {
       .subscribe(
         data => {
           this.currentVijest = data;
+          this.selectedKategorija = this.currentVijest.kategorija!;
+          console.log(this.selectedKategorija);
+          console.log("currentVijest:")
           console.log(data);
         },
         error => {
@@ -41,6 +50,7 @@ export class VijestDetailsComponent implements OnInit {
 
   updateVijest(): void {
     this.message = '';
+    this.currentVijest.kategorija = this.selectedKategorija; 
 
     this.vijestService.update(this.currentVijest._id, this.currentVijest)
       .subscribe(
@@ -64,5 +74,4 @@ export class VijestDetailsComponent implements OnInit {
           console.log(error);
         });
   }
-
 }

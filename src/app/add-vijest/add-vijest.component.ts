@@ -13,7 +13,8 @@ export class AddVijestComponent implements OnInit {
     naslov: '',
     tekst_kratki: '',
     tekst_full: '',
-    datum: ''
+    datum: '',
+    slika: ''
   };
   submitted = false;
 
@@ -25,7 +26,8 @@ export class AddVijestComponent implements OnInit {
   saveVijest(): void {
     const data = {
       naslov: this.vijest.naslov,
-      tekst_kratki: this.vijest.tekst_kratki
+      tekst_kratki: this.vijest.tekst_kratki,
+      slika: this.vijest.slika
     };
 
     this.vijestService.create(data)

@@ -1,9 +1,9 @@
 <div>
     <div *ngIf="currentVijest._id" class="edit-form">
-      <h4>Vijest</h4>
+      <h4>Unos nove vijesti</h4>
       <form>
         <div class="form-group">
-          <label for="title">Naslov</label>
+          <label for="title"><strong>Naslov članka:</strong></label>
           <input
             type="text"
             class="form-control"
@@ -13,14 +13,37 @@
           />
         </div>
         <div class="form-group">
-          <label for="description">Opis</label>
-          <input
+          <label for="title" class="mt-2"><strong>Kategorija:</strong></label>
+          <select class="form-select" name="kategorija" [(ngModel)]="selectedKategorija">
+            <option *ngFor="let kategorija of kategorije">
+              {{ kategorija }}
+            </option>
+          </select>
+          <p>Selected kategorija je: {{selectedKategorija}}</p>
+        </div>
+        
+        
+
+
+        <div class="form-group">
+          <label for="description" class="mt-2"><strong>Uvod u članak:</strong></label>
+          <textarea
             type="text"
             class="form-control"
             id="description"
             [(ngModel)]="currentVijest.tekst_kratki"
-            name="description"
-          />
+            name="description">
+          </textarea>
+        </div>
+        <div class="form-group">
+          <label for="clanak" class="mt-2"><strong>Cijeli članak:</strong></label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="clanak"
+            [(ngModel)]="currentVijest.tekst_full"
+            name="clanak">
+          </textarea>
         </div>
   
         <!-- <div class="form-group">

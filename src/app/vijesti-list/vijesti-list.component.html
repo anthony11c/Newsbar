@@ -39,6 +39,10 @@
       <div *ngIf="currentVijest._id">
         <h4><b>Odabrana vijest</b></h4>
         <div>
+          <label><strong>Slika:</strong></label>
+          <img src="{{ currentVijest.slika }}" >
+        </div>
+        <div>
           <label><strong>Naslov:</strong></label> {{ currentVijest.naslov }}
         </div>
         <div>

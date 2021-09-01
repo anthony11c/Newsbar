@@ -14,9 +14,9 @@ exports.create = (req, res) => {
   const vijest = new Vijest({
     kategorija: 1,
     naslov: req.body.naslov,
-    user: req.body.user,
     tekst_kratki: req.body.tekst_kratki,
-    tekst_full: req.body.tekst_full
+    tekst_full: req.body.tekst_full,
+    slika: req.body.slika
   });
 
   // Save Vijest in the database
