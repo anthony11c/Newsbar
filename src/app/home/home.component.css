@@ -17,7 +17,7 @@
 }
 
 .top-news-img-container{
-    height: 300px;
+    height: 400px;
 }
 
 .card-img-weather{
@@ -57,4 +57,20 @@ h1{
     padding: 15px;
     color: white;
     padding-left: 35px;
+}
+
+.znanostNaslov{
+    color: rgb(0, 102, 255);
+}
+
+.card-title-politika{
+    color: rgb(255, 94, 0);
+}
+
+.news-text-only-znanost:hover{
+    color: rgb(27, 95, 122);
+}
+
+.news-text-only-politika:hover{
+    color: rgb(87, 87, 87);
 }

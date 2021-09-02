@@ -1,4 +1,4 @@
-<h1><b>ANGULAR</b>-newsbar</h1>
+<h1 class="title" routerLink="home"><b>ANGULAR</b>-newsbar</h1>
   <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"></a>
@@ -7,9 +7,9 @@
       </button>
       <div class="d-flex justify-content-start collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ">
-          <a class="nav-link active" aria-current="page" href="#">SPORT</a>
-          <a class="nav-link" href="#">ZNANOST</a>
-          <a class="nav-link" href="#">POLITIKA</a>
+          <a class="nav-link active" aria-current="page" routerLink="sport">SPORT</a>
+          <a class="nav-link" routerLink="znanost">ZNANOST</a>
+          <a class="nav-link" routerLink="politika">POLITIKA</a>
         </div>
         <div class="d-flex justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ">
@@ -26,10 +26,10 @@
             </div>
             <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
               <li class="nav-item">
-                <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+                <a href="/register" class="nav-link" routerLink="register">Registracija</a>
               </li>
               <li class="nav-item">
-                <a href="/login" class="nav-link" routerLink="login">Login</a>
+                <a href="/login" class="nav-link" routerLink="login">Prijava</a>
               </li>
             </ul>
         
@@ -38,7 +38,7 @@
                 <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
               </li>
               <li class="nav-item">
-                <a href class="nav-link" (click)="logout()">LogOut</a>
+                <a href class="nav-link" (click)="logout()">Odjava</a>
               </li>
             </ul>
           </div>
@@ -47,3 +47,4 @@
     </div>
   </nav>
 <router-outlet></router-outlet>
+

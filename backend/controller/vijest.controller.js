@@ -10,13 +10,15 @@ exports.create = (req, res) => {
     return;
   } */
 
+
   // Create a Vijest
   const vijest = new Vijest({
-    kategorija: 1,
+    kategorija: req.body.kategorija,
     naslov: req.body.naslov,
     tekst_kratki: req.body.tekst_kratki,
     tekst_full: req.body.tekst_full,
-    slika: req.body.slika
+    slika: req.body.slika,
+    datum: new Date().toDateString()
   });
 
   // Save Vijest in the database

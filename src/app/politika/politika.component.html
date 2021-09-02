@@ -1,0 +1,36 @@
+<!-- Page content-->
+<div class="container">
+    <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-8">
+            <!-- Featured blog post-->
+            <div class="card  mb-4">
+                <a routerLink="/clanak/{{topVijest._id}}"><img class="card-img-top" src="{{topVijest.slika}}" alt="..." /></a>
+                <div class="card-body" routerLink="/clanak/{{topVijest._id}}">
+                    <h2 class="card-title">{{topVijest.naslov}}</h2>
+                    <p class="card-text">{{topVijest.tekst_kratki}}</p>
+                    <a class="btn btn-warning" routerLink="/clanak/{{topVijest._id}}">Detaljnije →</a>
+                </div>
+            </div>
+            <!-- Nested row for non-featured blog posts-->
+            <div class="row">
+                <div class="col-lg-6" *ngFor="let vijest of vijestiPolitika; let i = index">
+                    <!-- Blog post-->
+                    <div class="card h-100 mb-4">
+                        <a routerLink="/clanak/{{vijest._id}}"><img class="card-img-top" src="{{vijest.slika}}" alt="..." /></a>
+                        <div class="card-body">
+                            <h2 class="card-title h4">{{vijest.naslov}}</h2>
+                            <p class="card-text">{{vijest.tekst_kratki}}</p>
+                            <a class="btn btn-warning" routerLink="/clanak/{{vijest._id}}">Detaljnije →</a>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer-->
+<footer class="py-5 bg-dark footer">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Antonijo Ćosić - newsbar</p></div>
+  </footer>
+

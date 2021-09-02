@@ -17,6 +17,10 @@ import { AddVijestComponent } from './add-vijest/add-vijest.component';
 import { VijestDetailsComponent } from './vijest-details/vijest-details.component';
 import { VijestiListComponent } from './vijesti-list/vijesti-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SportComponent } from './sport/sport.component';
+import { ZnanostComponent } from './znanost/znanost.component';
+import { PolitikaComponent } from './politika/politika.component';
+import { ClanakComponent } from './clanak/clanak.component';
 
 
 @NgModule({
@@ -31,6 +35,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AddVijestComponent,
     VijestDetailsComponent,
     VijestiListComponent,
+    SportComponent,
+    ZnanostComponent,
+    PolitikaComponent,
+    ClanakComponent,
   ],
   imports: [
     HttpClientModule,

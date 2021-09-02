@@ -1,14 +1,13 @@
 <div class="container">
-  <div class="row">
+  <div class="row" >
     <div class="col-sm-9">
-      <div class="card zoom">
+      <div class="card zoom" routerLink="/clanak/{{topVijest._id}}">
         <div class="card-body">
           <div class="col-sm-12 top-news-img-container">
-            <img src="https://www.ludens.media/wp-content/uploads/2017/10/vatra.jpg" class="card-img-top card-img-top-news" alt="...">
+            <img src="{{topVijest.slika}}"  class="card-img-top card-img-top-news" alt="...">
           </div>
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title mt-1">{{topVijest.naslov}}</h5>
+          <a routerLink="/clanak/{{topVijest._id}}" class="btn btn-primary">Detaljnije...</a>
         </div>
       </div>
     </div>
@@ -23,52 +22,40 @@
 
   </div>
 
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
+  <div class="row mt-2 mb-2">
+    <div class="col-sm-6" >
+      <div class="card h-100" >
+        <div class="card-body" routerLink="/clanak/{{drugaVijest._id}}">
           <h2 class="card-title">Sport</h2>
-          <img src="https://ip.index.hr/remote/indexnew.s3.index.hr/8ec1ecae-f8af-4652-8256-af8bdb6ea792.jpg?width=488&height=268&mode=crop&anchor=topcenter&scale=both" class="card-img-top" alt="...">
+          <img src="{{drugaVijest.slika}}" class="card-img-top" alt="...">
+          <p class="news-text-only mt-1">{{drugaVijest.naslov}}</p>
         </div>
       </div>
     </div>
     <div class="col-sm-3">
-      <div class="card news-text-only-container">
-        <div class="card-body">
-          <h5 class="card-title">Popularno iz sporta</h5>
-          <p class="news-text-only">Dinamo pokušava sve kako bi doveo Cristiana Ronalda na Maksimir!</p>
-          <p class="news-text-only">Bjelica je fenomenalan, doveo tri igrača iz 4.HNL te dao im priliku u prvoj momčadi!</p>
-          <p class="news-text-only">Neymar pokušao na talent show-u u plesu no Ronaldinho je bio bolji za dlaku!</p>
+      <div class="card h-100 news-text-only-container">
+        <h5 class="card-title znanostNaslov ms-3 mt-3">Popularno iz znanosti</h5>
+        <div class="card-body" *ngFor="let vijest of znanostVijesti; let i = index">
+          <p class="news-text-only-znanost" routerLink="/clanak/{{vijest._id}}">{{vijest.naslov}}</p><hr>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-3">
-      <div class="card ">
-        <div class="card-body">
-          <h5 class="card-title">Weather in Croatia</h5>
-          <img src="https://www.ncwlife.com/wp-content/uploads/2020/04/Weather-3.png" class="card-img-top" alt="...">
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Weather in Croatia</h5>
-          <img src="https://www.ncwlife.com/wp-content/uploads/2020/04/Weather-3.png" class="card-img-top" alt="...">
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Weather in Croatia</h5>
-          <img src="https://www.ncwlife.com/wp-content/uploads/2020/04/Weather-3.png" class="card-img-top" alt="...">
+  <div class="row" >
+    <h2 class="card-title-politika mt-2 ms-3">Politika</h2>
+    <div class="col-sm-4" *ngFor="let vijest of politikaVijesti; let i = index">
+      <div class="card h-100">
+        <div class="card-body" routerLink="/clanak/{{vijest._id}}">
+          <img src="{{vijest.slika}}" class="card-img-top" alt="...">
+          <p class="news-text-only-politika mt-2 "><strong>{{vijest.naslov}}</strong></p>
         </div>
       </div>
     </div>
   </div>
   <hr><hr>
 </div>
+<!-- Footer-->
+<footer class="py-5 bg-dark footer">
+  <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Antonijo Ćosić - newsbar</p></div>
+</footer>

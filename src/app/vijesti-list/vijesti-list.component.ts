@@ -13,7 +13,8 @@ export class VijestiListComponent implements OnInit {
   currentVijest: Vijest = {};
   currentIndex = -1;
   title = '';
-  vijestId = '611f9de24d79651150d5de65';
+  vijestId = '';
+
 
   constructor(private vijestService: VijestService) { }
 

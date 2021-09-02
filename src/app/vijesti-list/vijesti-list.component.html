@@ -40,13 +40,17 @@
         <h4><b>Odabrana vijest</b></h4>
         <div>
           <label><strong>Slika:</strong></label>
-          <img src="{{ currentVijest.slika }}" >
+          <img id="slika" class="slika" src="{{ currentVijest.slika }}" 
+              [class.slikaSport]="currentVijest.kategorija=='Sport'"
+              [class.slikaZnanost]="currentVijest.kategorija=='Znanost'"
+              [class.slikaPolitika]="currentVijest.kategorija=='Politika'"
+          >
         </div>
         <div>
           <label><strong>Naslov:</strong></label> {{ currentVijest.naslov }}
         </div>
         <div>
-          <label><strong>Opis:</strong></label>
+          <label><strong>Uvod u članak:</strong></label>
           {{ currentVijest.tekst_kratki }}
         </div>
         <!--<div>
@@ -56,7 +60,7 @@
     -->
   
         <a class="btn btn-sm btn-warning" routerLink="/vijesti/{{ currentVijest._id }}">
-          Edit
+          Uredi
         </a>
       </div>
   

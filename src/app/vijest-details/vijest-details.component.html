@@ -36,6 +36,16 @@
           </textarea>
         </div>
         <div class="form-group">
+          <label for="image"><strong>Priloži link na sliku</strong></label>
+          <textarea class="form-control"
+          id="image"
+          required
+          [(ngModel)]="currentVijest.slika"
+          name="image">
+            
+          </textarea>
+        </div>
+        <div class="form-group">
           <label for="clanak" class="mt-2"><strong>Cijeli članak:</strong></label>
           <textarea
             type="text"

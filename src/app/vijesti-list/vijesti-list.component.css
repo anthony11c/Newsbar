@@ -7,3 +7,21 @@
 .list-group-item:hover{
   cursor: pointer;
 }
+
+.slikaSport{
+  max-width: 40rem;
+  border: 20px solid red;
+  border-radius: 5px;
+}
+
+.slikaZnanost{
+  max-width: 40rem;
+  border: 20px solid rgb(0, 102, 255);
+  border-radius: 5px;
+}
+
+.slikaPolitika{
+  max-width: 40rem;
+  border: 20px solid rgb(255, 94, 0);
+  border-radius: 5px;
+}

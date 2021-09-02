@@ -2,7 +2,7 @@
     <div class="submit-form">
       <div *ngIf="!submitted">
         <div class="form-group">
-          <label for="title">Naslov</label>
+          <label for="title"><strong>Naslov:</strong></label>
           <input
             type="text"
             class="form-control"
@@ -14,7 +14,16 @@
         </div>
   
         <div class="form-group">
-          <label for="description">Opis</label>
+          <label for="title" class="mt-2"><strong>Kategorija:</strong></label>
+          <select class="form-select" name="kategorija" [(ngModel)]="selectedKategorija">
+            <option *ngFor="let kategorija of kategorije">
+              {{ kategorija }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group mt-2">
+          <label for="description"><strong>Uvod u članak:</strong></label>
           <textarea class="form-control"
           id="description"
           required
@@ -24,8 +33,8 @@
           </textarea>
         </div>
 
-        <div class="form-group">
-          <label for="image">Priloži link na sliku</label>
+        <div class="form-group mt-2">
+          <label for="image"><strong>Priloži link na sliku:</strong></label>
           <textarea class="form-control"
           id="image"
           required
@@ -35,12 +44,27 @@
           </textarea>
         </div>
   
-        <button (click)="saveVijest()" class="btn btn-success mt-2">Submit</button>
+        <div class="form-group mt-2">
+          <label for="clanak"><strong>Cijeli članak:</strong></label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="clanak"
+            [(ngModel)]="vijest.tekst_full"
+            name="clanak">
+          </textarea>
+        </div>
+
+        <button (click)="saveVijest()" class="btn btn-success mt-2">Dodaj</button>
       </div>
   
       <div *ngIf="submitted">
-        <h4>Tutorial was submitted successfully!</h4>
-        <button class="btn btn-success" (click)="newVijest()">Add</button>
+        <h4>Članak je uspješno dodan!</h4>
+        <button class="btn btn-success" (click)="newVijest()">Dodaj novi članak</button>
       </div>
     </div>
   </div>
+  <!-- Footer-->
+<footer class="py-5 bg-dark footer">
+  <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Antonijo Ćosić - newsbar</p></div>
+</footer>

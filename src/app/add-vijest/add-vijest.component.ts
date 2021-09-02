@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Vijest } from '../models/vijest.model';
 import { VijestService } from '../_services/vijest.service';
@@ -11,12 +12,16 @@ export class AddVijestComponent implements OnInit {
 
   vijest:Vijest = {
     naslov: '',
+    kategorija: '',
     tekst_kratki: '',
     tekst_full: '',
     datum: '',
     slika: ''
   };
+
+  selectedKategorija = '';
   submitted = false;
+  kategorije = [ 'Sport', 'Znanost', 'Politika'];
 
   constructor(private vijestService: VijestService) { }
 
@@ -26,9 +31,14 @@ export class AddVijestComponent implements OnInit {
   saveVijest(): void {
     const data = {
       naslov: this.vijest.naslov,
+      kategorija: this.selectedKategorija,
       tekst_kratki: this.vijest.tekst_kratki,
-      slika: this.vijest.slika
+      slika: this.vijest.slika,
+      tekst_full: this.vijest.tekst_full,
     };
+
+    console.log(data);
+    
 
     this.vijestService.create(data)
       .subscribe(
