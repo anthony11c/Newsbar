@@ -75,8 +75,17 @@ function initial() {
       }
     });
   }
+app.use(express.static(__dirname + '/dist'));
 
-// Server setup
-app.listen(8080, () => {
-    console.log('server listening on port 8080');
+app.get('/', function(req, res) {
+  res.sendFile(path,join(__dirnname+'/dist/index.html'));
+});
+
+// // Server setup
+// app.listen(8080, () => {
+//     console.log('server listening on port 8080');
+// });
+
+app.listen(process.env.PORT || 3000, () => {
+     console.log('server listening on port 3000');
 });
