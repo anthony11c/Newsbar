@@ -12,8 +12,8 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-const db = require('../backend/models');
-const Role = require('../backend/models/role');
+const db = require('./backend/models');
+const Role = require('./backend/models/role');
 
 db.mongoose.connect(db.url, {
     useNewUrlParser: true,
@@ -44,11 +44,11 @@ app.get('/politika', (req,res) => {
     res.send('<h2>Svi članci vezani za politiku!</h2>');
 });
 
-require('../backend/routes/user.routes')(app);
-require('../backend/routes/vijest.routes')(app);
-require('../backend/routes/kategorija.routes')(app);
-require('../backend/routes/role.routes')(app);
-require('../backend/routes/auth.routes')(app);
+require('./backend/routes/user.routes')(app);
+require('./backend/routes/vijest.routes')(app);
+require('./backend/routes/kategorija.routes')(app);
+require('./backend/routes/role.routes')(app);
+require('./backend/routes/auth.routes')(app);
 
 function initial() {
     Role.collection.estimatedDocumentCount((err, count) => {
