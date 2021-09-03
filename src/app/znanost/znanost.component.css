@@ -2,3 +2,11 @@
     cursor: pointer;
 }
 
+.card-img-top{
+    opacity: 1;
+    transition: .8s ease;
+}
+
+.card-img-top:hover{
+    opacity: 0.8;
+}
