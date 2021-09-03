@@ -14,9 +14,9 @@
             </div>
             <!-- Nested row for non-featured blog posts-->
             <div class="row">
-                <div class="col-lg-6" *ngFor="let vijest of vijestiSport; let i = index">
+                <div class="col-lg-6 mb-2" *ngFor="let vijest of vijestiSport; let i = index">
                     <!-- Blog post-->
-                    <div class="card h-100 mb-4">
+                    <div class="card h-100">
                         <a routerLink="/clanak/{{vijest._id}}"><img class="card-img-top" src="{{vijest.slika}}" alt="..." /></a>
                         <div class="card-body">
                             <h2 class="card-title h4">{{vijest.naslov}}</h2>

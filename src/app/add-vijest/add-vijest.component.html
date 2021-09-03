@@ -8,6 +8,8 @@
             class="form-control"
             id="title"
             required
+            minlength="10"
+            maxlength="50"
             [(ngModel)]="vijest.naslov"
             name="title"
           />
@@ -27,6 +29,7 @@
           <textarea class="form-control"
           id="description"
           required
+          minlength="10"
           [(ngModel)]="vijest.tekst_kratki"
           name="description">
             
@@ -51,6 +54,7 @@
             class="form-control"
             id="clanak"
             [(ngModel)]="vijest.tekst_full"
+            required
             name="clanak">
           </textarea>
         </div>

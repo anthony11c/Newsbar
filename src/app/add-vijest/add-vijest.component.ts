@@ -19,6 +19,8 @@ export class AddVijestComponent implements OnInit {
     slika: ''
   };
 
+  isSuccessful = false;
+  errorMessage = '';
   selectedKategorija = '';
   submitted = false;
   kategorije = [ 'Sport', 'Znanost', 'Politika'];

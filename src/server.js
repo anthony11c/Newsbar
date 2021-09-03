@@ -28,22 +28,6 @@ db.mongoose.connect(db.url, {
     process.exit();
   });
 
-app.get('/', (req, res) =>{
-    res.send('<h2>Hello from Express.js server!!</h2>');
-});
-
-app.get('/sport', (req,res) => {
-    res.send('<h2>Svi članci vezani za sport!</h2>');
-});
-
-app.get('/zabava', (req,res) => {
-    res.send('<h2>Svi članci vezani za zabavu!</h2>');
-});
-
-app.get('/politika', (req,res) => {
-    res.send('<h2>Svi članci vezani za politiku!</h2>');
-});
-
 require('./backend/routes/user.routes')(app);
 require('./backend/routes/vijest.routes')(app);
 require('./backend/routes/kategorija.routes')(app);
