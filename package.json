@@ -35,6 +35,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.2",
     "rxjs": "~6.6.0",
+    "server.js": "1.0.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
